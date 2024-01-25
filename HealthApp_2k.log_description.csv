@@ -1,0 +1,76 @@
+EventId,Description
+E1,Upload alarm statics to DB with step details
+E2,Bulk save of health data with size and total time
+E3,Calculate total altitude with cache
+E4,Calculate total calories with cache
+E5,Check for new day and reset sync condition
+E6,Check first sync by type with no existing data
+E7,Check insert status for sufficient step or calorie sum
+E8,Check insert status for sufficient step or calorie sum
+E9,Clear data or reset
+E10,Close notification process
+E11,Delete health notification
+E12,Flush sensor data
+E13,Successful data flush to DB
+E14,Flush temporary cache to DB by stand
+E15,Check app validity for health or wear
+E16,Get binder package name for Huawei health
+E17,Get difference in total steps
+E18,Get step counter status
+E19,Step counter status is true
+E20,Get today's basic standard steps
+E21,Get today's sport data steps record
+E22,Get today's total detailed steps
+E23,Check sync possibility without cloud version
+E24,Data privacy initialized as true
+E25,Data privacy open start health data push
+E26,Initialize environment
+E27,User privacy initialized as true
+E28,User privacy open start user data push
+E29,Successful data insert callback
+E30,Successful event insert with time range
+E31,Fail to bulk save health data with error
+E32,Check app type for health data insert
+E33,End of health data insert with total time
+E34,Health data insert details
+E35,Screen status is on
+E36,Auto sync needed as switch is open
+E37,New date and type details
+E38,Next day information
+E39,Extend event details
+E40,Receive screen off intent
+E41,Receive screen on intent
+E42,Stand step change event
+E43,Handle screen on broadcast action
+E44,Handle time tick broadcast action
+E45,Sensor register success
+E46,Reload with restart details
+E47,Report event details
+E48,Restart step counter
+E49,Save health detail data with identifiers
+E50,Fail to save one health detail data
+E51,Save real-time health data stats
+E52,Save stat data details
+E53,Unknown screen status assumed on
+E54,Send sync failed broadcast
+E55,Set basic standard steps with restart
+E56,Set difference in total steps
+E57,Set goal notification shown record
+E58,Set today's total detailed steps
+E59,Success in setting DB last data minute
+E60,Set DB last data minute
+E61,Start sport sync with initial steps
+E62,Start auto sync with app details
+E63,Start listener change with subscribe list
+E64,Start sync with HiSyncOption details
+E65,Start timer for auto sync
+E66,Check step sync with app sync times
+E67,Check step sync with app and stat sync times
+E68,Day change event
+E69,Time stamp back with extend report time
+E70,Record as basic step data
+E71,Reload today's basic steps
+E72,Upload one-minute data to engine
+E73,Upload statics to DB failed
+E74,Upload statics to DB success
+E75,Write data to DB with size

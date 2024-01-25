@@ -15,13 +15,13 @@ This dataset represents logs from a health app, spanning a total duration of 2 h
 ##### Log Structure
 Each log entry is structured with the following fields:
 
-LineId: A unique identifier for each log entry.
-Time: The timestamp when the log was recorded, formatted as YYYYMMDD-HH:MM:SS:ms.
-Component: Indicates the specific component of the health app that generated the log.
-Pid: The Process ID associated with the log entry.
-Content: Contains the detailed log message.
-EventId: A code used to categorize the type of event being logged.
-EventTemplate: A template format illustrating how the log message in Content is structured.
+1. LineId: A unique identifier for each log entry.
+2. Time: The timestamp when the log was recorded, formatted as YYYYMMDD-HH:MM:SS:ms.
+3. Component: Indicates the specific component of the health app that generated the log.
+4. Pid: The Process ID associated with the log entry.
+5. Content: Contains the detailed log message.
+6. EventId: A code used to categorize the type of event being logged.
+7. EventTemplate: A template format illustrating how the log message in Content is structured.
 
 #### Sample Log Entries
 

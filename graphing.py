@@ -25,7 +25,6 @@ def createStepLinePlot():
     stepFigSub.add_trace(stepsDay1, row=2, col=1)
     stepFigSub.add_trace(stepsDay2, row=2, col=2)
 
-    # Add an annotation
     stepFigSub.add_annotation(
         x=steps.loc[steps[steps['steps'] == 0].index[0]]['Time'],
         y=1,
@@ -195,3 +194,52 @@ def createScreenStatusTimeline():
     )
 
     return timelineFig
+
+def createComponentHistogram():
+    componentCount = data["Component"].value_counts().reset_index()
+    componentCount.columns = ['Component', 'Frequency']
+
+    componentHistogram = go.Figure(go.Bar(
+        x=componentCount['Component'], 
+        y=componentCount['Frequency'],
+        showlegend=False,
+        text=componentCount['Frequency']
+    ))
+    componentHistogram.update_layout(
+        height=400, 
+        width=1200, 
+        title_text='Histogram for Component',
+        title_font_size=24,
+        xaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
+        yaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True,title_text=''),
+        font=dict(family="Arial, sans-serif", size=12, color="black"),
+        plot_bgcolor='white',
+        paper_bgcolor='white',
+    )
+
+    return componentHistogram
+
+def createEventIdHistogram():
+    eventIdCount = data["EventId"].value_counts().reset_index()
+    eventIdCount.columns = ['EventId', 'Frequency']
+
+    eventIdHistogram = go.Figure(go.Bar(
+        x=eventIdCount['EventId'], 
+        y=eventIdCount['Frequency'],
+        showlegend=False,
+        text=eventIdCount['Frequency']
+    ))
+    eventIdHistogram.update_layout(
+        height=400, 
+        width=1200, 
+        title_text='Histogram for EventId',
+        title_font_size=24,
+        xaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
+        yaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True,title_text=''),
+        font=dict(family="Arial, sans-serif", size=12, color="black"),
+        plot_bgcolor='white',
+        paper_bgcolor='white',
+    )
+
+    return eventIdHistogram
+

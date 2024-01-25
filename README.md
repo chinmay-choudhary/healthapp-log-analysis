@@ -7,9 +7,43 @@ This repository contains analysis done on log data from a health app which is a 
 2. run the dash app by running the `app.py`
 3. run the dockerised version of the dash app by following the steps below
 
-### Analytics
-Total Time considered in the logs is `0 days 2 hours 47 minutes and 6 seconds`
-Starting at `2017-12-23 22:15:29` and Ending at `2017-12-24 01:02:35`
+### Data
+
+#### Overview
+This dataset represents logs from a health app, spanning a total duration of 2 hours, 47 minutes, and 6 seconds. The logging period starts on December 23, 2017, at 22:15:29 and concludes on December 24, 2017, at 01:02:35.
+
+##### Log Structure
+Each log entry is structured with the following fields:
+
+LineId: A unique identifier for each log entry.
+Time: The timestamp when the log was recorded, formatted as YYYYMMDD-HH:MM:SS:ms.
+Component: Indicates the specific component of the health app that generated the log.
+Pid: The Process ID associated with the log entry.
+Content: Contains the detailed log message.
+EventId: A code used to categorize the type of event being logged.
+EventTemplate: A template format illustrating how the log message in Content is structured.
+
+#### Sample Log Entries
+
+
+|LineId|Time                 |Component               |Pid     |Content                                                                       |EventId|EventTemplate                                                      |
+|------|---------------------|------------------------|--------|------------------------------------------------------------------------------|-------|-------------------------------------------------------------------|
+|1     |20171223-22:15:29:606|Step_LSC                |30002312|onStandStepChanged 3579                                                       |E42    |onStandStepChanged <*>                                             |
+|2     |20171223-22:15:29:615|Step_LSC                |30002312|onExtend:1514038530000 14 0 4                                                 |E39    |onExtend:<*> <*> <*> <*>                                           |
+|3     |20171223-22:15:29:633|Step_StandReportReceiver|30002312|onReceive action: android.intent.action.SCREEN_ON                             |E41    |onReceive action: android.intent.action.SCREEN_ON                  |
+|4     |20171223-22:15:29:635|Step_LSC                |30002312|processHandleBroadcastAction action:android.intent.action.SCREEN_ON           |E43    |processHandleBroadcastAction action:android.intent.action.SCREEN_ON|
+|5     |20171223-22:15:29:635|Step_StandStepCounter   |30002312|flush sensor data                                                             |E12    |flush sensor data                                                  |
+|6     |20171223-22:15:29:635|Step_SPUtils            |30002312| getTodayTotalDetailSteps = 1514038440000##6993##548365##8661##12266##27164404|E22    |getTodayTotalDetailSteps = <*>##<*>##<*>##<*>##<*>##<*>            |
+|7     |20171223-22:15:29:636|Step_SPUtils            |30002312|setTodayTotalDetailSteps=1514038440000##7007##548365##8661##12361##27173954   |E58    |setTodayTotalDetailSteps=<*>                                       |
+|8     |20171223-22:15:29:636|Step_LSC                |30002312|onStandStepChanged 3579                                                       |E42    |onStandStepChanged <*>                                             |
+### EDA
+
+We first check for any missing values in the dataset and looking at the table below there were no missing values
+
+|Index|Time                 |Component               |Pid     |Content                                                                       |EventId|EventTemplate                                                      |Date|
+|------|---------------------|------------------------|--------|------------------------------------------------------------------------------|-------|-------------------------------------------------------------------|----|
+|0     |0                    |0                       |0       |0                                                                             |0      |0                                                                  |0   |
+
 
 Figure 1: Line plot of total steps taken over the time period with a reset a few miliseconds into the second day.
 ![step count line chart](plots/stepCountOverTime.png)
@@ -28,6 +62,12 @@ Figure 5: The screen status vs time with a 1 representing that sceen was on and 
 
 Figure 6: The timeline view of the screen status with screen off shown in blue and screen on shown in red
 ![timeline of screen status](plots/screenStatusTimeline.png)
+
+Figure 7: Histogram showing frequency of component being used
+![component usage histogram](plots/componentHistogram.png)
+
+Figure 8: Histogram showing frequency of event id being invoked
+![component usage histogram](plots/eventIdHistogram.png)
 
 ##### Steps to run the docker container for the dash app 
 ###### Setup and Running Instructions

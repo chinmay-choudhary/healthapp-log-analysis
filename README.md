@@ -7,7 +7,7 @@ This repository contains analysis done on log data from a health app which is a 
 2. run the dash app by running the `app.py`
 3. run the dockerised version of the dash app by following the steps below
 
-Note: Before running any code run the following first 
+Note: Before running any code in your local environment run the following command first 
 ```bash
 pip install -r requirements.txt
 ```

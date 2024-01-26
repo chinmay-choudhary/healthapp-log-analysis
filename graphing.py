@@ -4,6 +4,8 @@ from plotly.subplots import make_subplots
 import plotly.express as px
 from utils import *
 from enums import STEPS_EVENT_ID,ACTIVE_EVENT_ID,CALORIE_EVENT_ID,STEP_LIST_SPLIT_INDEX,CALORIE_LIST_SPLIT_INDEX,ACTIVE_LIST_SPLIT_INDEX,STEP_SPLIT_STRING,CALORIE_SPLIT_STRING,ACTIVE_SPLIT_STRING
+import warnings
+warnings.filterwarnings("ignore")
 
 data = pd.read_csv('HealthApp_2k.log_structured.csv',index_col='LineId')
 data = preprocessData(data)
@@ -43,7 +45,7 @@ def createStepLinePlot():
         height=800, 
         width=1200, 
         title_text="Step Count Over Time", 
-        title_font_size=24,
+        title_font_size=16,
         
         xaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
         yaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
@@ -72,7 +74,7 @@ def createStepsBarplot():
         xaxis_title='Date',
         yaxis_title='Steps',
         legend=dict(title='Steps', x=1, y=1),
-        title_font_size=24,
+        title_font_size=16,
         font=dict(family="Arial, sans-serif", size=12, color="black"),
         xaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
         yaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
@@ -101,7 +103,7 @@ def createCaloriesPlot():
         height=800, 
         width=1200, 
         title_text="Calorie Count Over Time", 
-        title_font_size=24,
+        title_font_size=16,
         
         xaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
         yaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
@@ -137,7 +139,7 @@ def createActivePlot():
         height=800, 
         width=1200, 
         title_text="Standup Count Over Time", 
-        title_font_size=24,
+        title_font_size=16,
         
         xaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
         yaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
@@ -164,7 +166,7 @@ def createScreenDataLineFig():
         height=400, 
         width=1200, 
         title_text='Screen Status Over Time',
-        title_font_size=24,
+        title_font_size=16,
         
         xaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
         yaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
@@ -185,7 +187,7 @@ def createScreenStatusTimeline():
         height=400, 
         width=1200, 
         title_text='Event Timeline of Screen Status',
-        title_font_size=24,
+        title_font_size=16,
         xaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
         yaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True,title_text=''),
         font=dict(family="Arial, sans-serif", size=12, color="black"),
@@ -209,7 +211,7 @@ def createComponentHistogram():
         height=400, 
         width=1200, 
         title_text='Histogram for Component',
-        title_font_size=24,
+        title_font_size=16,
         xaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
         yaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True,title_text=''),
         font=dict(family="Arial, sans-serif", size=12, color="black"),
@@ -233,7 +235,7 @@ def createEventIdHistogram():
         height=400, 
         width=1200, 
         title_text='Histogram for EventId',
-        title_font_size=24,
+        title_font_size=16,
         xaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True),
         yaxis=dict(showgrid=False, linecolor='black', linewidth=2, mirror=True,title_text=''),
         font=dict(family="Arial, sans-serif", size=12, color="black"),

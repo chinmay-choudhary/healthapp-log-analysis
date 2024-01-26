@@ -1,4 +1,6 @@
 import pandas as pd
+import warnings
+warnings.filterwarnings("ignore")
 
 def preprocessData(data):
     timeFormat = '%Y%m%d-%H:%M:%S:%f'

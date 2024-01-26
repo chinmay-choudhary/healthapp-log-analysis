@@ -2,7 +2,7 @@
 
 ### Description
 
-This repository contains analysis done on log data from a health app which is a mobile application for Andriod devices. The different ways to look at the analysis and they are as follows:
+This repository contains analysis done on log data from a health app which is a mobile application for Andriod devices. The different ways to look at the analysis are as follows:
 1. run the code blocks in `analysis.ipynb` notebook
 2. run the dash app by running the `app.py`
 3. run the dockerised version of the dash app by following the steps below
@@ -41,36 +41,35 @@ Each log entry is structured with the following fields:
 |7     |20171223-22:15:29:636|Step_SPUtils            |30002312|setTodayTotalDetailSteps=1514038440000##7007##548365##8661##12361##27173954   |E58    |setTodayTotalDetailSteps=<*>                                       |
 |8     |20171223-22:15:29:636|Step_LSC                |30002312|onStandStepChanged 3579                                                       |E42    |onStandStepChanged <*>                                             |
 ### EDA
-
-We first check for any missing values in the dataset and looking at the table below there were no missing values
+We first checked for any missing values in the dataset and looking at the table below there were no missing values
 
 |Index|Time                 |Component               |Pid     |Content                                                                       |EventId|EventTemplate                                                      |Date|
 |------|---------------------|------------------------|--------|------------------------------------------------------------------------------|-------|-------------------------------------------------------------------|----|
 |0     |0                    |0                       |0       |0                                                                             |0      |0                                                                  |0   |
 
 
-Figure 1: Line plot of total steps taken over the time period with a reset a few miliseconds into the second day.
+Figure 1: Line plot of total steps taken over the period with a reset a few milliseconds into the second day.
 ![step count line chart](plots/stepCountOverTime.png)
 
 Figure 2: Bar Plot showing the total steps taken each day
 ![step count datewise bar chart](plots/stepsPerDate.png)
 
-Figure 3: Plot of total calories over the time period. Looking at the below plot one issue that arises is that the total calory count is abnormaly high for an individual as the values are > 1*10^5 as the normal daily calorie intake of a human is 1200-3000, we can also see that the value is not accumulated over the whole timeframe of the logs as the totalCalories value is reset to 0 at midnight
+Figure 3: Displays a plot of the total calorie count over a specified period. A notable issue is the abnormally high-calorie totals, exceeding 100,000, which is significantly higher than the normal daily calorie intake for an individual, typically ranging from 1,200 to 3,000 calories. Additionally, these values are not cumulative over the entire timeframe of the logs, as the total calorie count resets to zero at midnight.
 ![total calorie line chart](plots/caloriesLineChart.png)
 
-Figure 4: Histograms of measuring the amount of times a user stood up during a time interval of 10 minutes
+Figure 4: Histograms measuring the number of times a user stood up during a time interval of 10 minutes
 ![standup frequency histogram](plots/standupCount.png)
 
-Figure 5: The screen status vs time with a 1 representing that sceen was on and a 0 representing that the screen was off
-![screen status timeseries chart](plots/screenStatusLineChart.png)
+Figure 5: The screen status vs time with a 1 representing that the screen was on and a 0 representing that the screen was off-screen 
+![status time-series chart](plots/screenStatusLineChart.png)
 
-Figure 6: The timeline view of the screen status with screen off shown in blue and screen on shown in red
-![timeline of screen status](plots/screenStatusTimeline.png)
+Figure 6: The timeline view of the screen status with the screen off shown in blue and the screen on shown in red
+![screen status timeline](plots/screenStatusTimeline.png)
 
-Figure 7: Histogram showing frequency of component being used
+Figure 7: Histogram showing the frequency of component being used
 ![component usage histogram](plots/componentHistogram.png)
 
-Figure 8: Histogram showing frequency of event id being invoked
+Figure 8: Histogram showing the frequency of event ID being invoked
 ![component usage histogram](plots/eventIdHistogram.png)
 
 ##### Steps to run the docker container for the dash app 
@@ -119,5 +118,5 @@ Docker is running on your system.
 The raw logs are available for downloading at https://github.com/logpai/loghub.
 
 ### Citation
-If you use this dataset from loghub in your research, please cite the following papers.
+If you use this dataset from Loghub in your research, please cite the following papers.
 + Jieming Zhu, Shilin He, Pinjia He, Jinyang Liu, Michael R. Lyu. [Loghub: A Large Collection of System Log Datasets for AI-driven Log Analytics](https://arxiv.org/abs/2008.06448). IEEE International Symposium on Software Reliability Engineering (ISSRE), 2023.# healthapp-log-analysis
